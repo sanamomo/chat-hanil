@@ -1,0 +1,10 @@
+ja:
+  users: 
+    show:
+      nickname: ユーザー名
+      email: Email
+  posts:
+    index:
+    new:
+      required: 必須
+      image: 画像を選択する

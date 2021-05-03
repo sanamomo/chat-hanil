@@ -1,0 +1,12 @@
+ko:
+  users: 
+    show:
+      nickname: 사용자명
+      email: Email
+      userposts: 
+  posts:
+    index:
+    
+    new:
+      required: 필수
+      image: 사진 선택

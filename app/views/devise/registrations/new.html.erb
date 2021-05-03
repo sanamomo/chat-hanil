@@ -1,0 +1,138 @@
+<%= render "shared/header"%>
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+     <%= t('devise.new.sign_up_info') %>
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('activerecord.models.user') %>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('attributes.user.email')%>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <%= f.email_field :email, class:"input-default", id:"email", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('activerecord.attributes.user.password')%>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <%= f.password_field :password, class:"input-default", id:"password" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('activerecord.attributes.user.password_confirmation') %>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('devise.new.last_first_name') %>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :last_name, class:"input-name", id:"last-name" %>
+      <%= f.text_area :first_name, class:"input-name", id:"first-name" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('devise.new.name_eng') %>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :last_name_eng, class:"input-name", id:"last-name-eng" %>
+      <%= f.text_area :first_name_eng, class:"input-name", id:"first-name-eng" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('devise.new.self_introduction') %>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <%= f.text_area :self_introduction, class:"input-default", id:"self_introduction",maxlength:"1000" %>
+  </div>
+
+  <div class="user-selects">
+    <div class="form">
+      <div class="bold-text">
+      <%= t('devise.new.sex_id') %>
+        <span class="indispensable"> <%= t('devise.new.required') %> </span>
+      </div>
+      <%= f.collection_select(:sex_id, Sex.all, :id, :name, { }, {class:"select-box", id:"item-sales-status"}) %>
+    </div>
+
+    <div class="form">
+      <div class="bold-text">
+      <%= t('devise.new.area_id') %>
+        <span class="indispensable"> <%= t('devise.new.required') %> </span>
+      </div>
+      <%= f.collection_select(:area_id, Area.all, :id, :name, { }, {class:"select-box", id:"item-sales-status"}) %>
+    </div>
+  
+    <div class="form">
+      <div class="bold-text">
+      <%= t('devise.new.language') %>
+        <span class="indispensable"> <%= t('devise.new.required') %> </span>
+      </div>
+      <%= f.collection_select(:language_id, Language.all, :id, :name, { }, {class:"select-box", id:"item-sales-status"}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">
+      <%= t('devise.new.birthdays') %>
+      </label>
+      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                    "<p> year </p>", "<p> mounth </p>") + "<p> day </p>" %>
+    </div>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+
+<%# , class:"register-red-btn"%>

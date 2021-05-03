@@ -1,0 +1,21 @@
+ja:
+  devise:
+    new:
+      sign_up_info: 新規会員登録
+      required: 必須
+      my_password: パスワード
+      my_password_confirmation: パスワード（確認）
+      last_first_name: お名前（全角）
+      name_eng: ふりがな（ローマ字）
+      self_introduction: 自己紹介
+      sex_id: 性別
+      area_id: 居住地
+      language: 言語
+      birthdays: 生年月日
+    edit:
+      info: アカウント情報編集
+      new_user: 新しいユーザー名
+      new_email: 新しいEmail
+      new_password: 新しいパスワード
+      confirm_new_password: 新しいパスワード（確認）
+      user_current_password: 現在のパスワード

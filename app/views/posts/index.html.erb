@@ -1,0 +1,16 @@
+<%= render "shared/header"%>
+
+  <% if @posts.present? %>
+
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post.id),method: :get do %>
+    <div class='item-img-content'>
+      <%= image_tag post.image, class: "item-img" %>
+    </div>
+    <% end %>
+    <div class='post-content'>
+        <%= post.content %>
+    </div>
+  <% end %>
+  <% end %>
+

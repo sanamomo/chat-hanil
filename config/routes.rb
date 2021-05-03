@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'posts#index'
+  devise_for :users 
+
+  scope "(:locale)" do #, locale: /ja|ko/ 
+    resources :users
+    resources :posts
+  end
 end
+
+# resources :like
+# resources :comments, only: :create

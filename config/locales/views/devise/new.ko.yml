@@ -1,0 +1,21 @@
+ko:
+  devise:
+    new:
+      sign_up_info: 회원가입 
+      required: 필수
+      my_password: 비밀번호
+      my_password_confirmation: 비밀번호 확인
+      last_first_name: 이름
+      name_eng: 이름（영어）
+      self_introduction: 자기소개
+      sex_id: 성별
+      area_id: 거주지
+      language: 언어
+      birthdays: 생년월일
+    edit:
+      info: 프로필 수정
+      new_user: 새로운 사용자명
+      new_email: 새로운 Email
+      new_password: 새로운 비밀번호
+      confirm_new_password: 새로운 비밀번호（확인）
+      user_current_password: 현재 비밀번호
