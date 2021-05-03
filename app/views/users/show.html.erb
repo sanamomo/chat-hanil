@@ -1,0 +1,47 @@
+<%= render "shared/secound_header"%>
+
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @user.nickname %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1"><%= t('users.show.nickname') %></th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1"><%= t('devise.new.sex_id') %></th>
+            <td class="table__col2"><%= @user.sex.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1"><%= t('devise.new.area_id') %></th>
+            <td class="table__col2"><%= @user.area.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1"><%= t('devise.new.language') %></th>
+            <td class="table__col2"><%= @user.language.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1"><%= t('devise.new.self_introduction') %></th>
+            <td class="table__col2"><%= @user.self_introduction %></td>
+          </tr>
+        </tbody>
+      </table>
+
+    <% if user_signed_in? %>
+        <%= link_to "Edit", edit_user_registration_path, method: :get, class: "item-red-btn" %>
+
+      <h2 class="page-heading">
+        <%# ユーザーの投稿一覧 %>
+      </h2>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%#= render partial: 'prototypes/prototype', collection: @prototypes %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
