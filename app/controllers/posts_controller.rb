@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  # before_action :set_item, only: [:create, :new]
+  before_action :set_item, only: [:show]
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -17,6 +17,9 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
   private
