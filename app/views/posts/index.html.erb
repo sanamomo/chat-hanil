@@ -1,16 +1,23 @@
 <%= render "shared/header"%>
 
-  <% if @posts.present? %>
+<% if @posts.present? %>
 
-  <% @posts.each do |post| %>
-    <%= link_to post_path(post.id),method: :get do %>
-    <div class='item-img-content'>
-      <%= image_tag post.image, class: "item-img" %>
-    </div>
-    <% end %>
-    <div class='post-content'>
-        <%= post.content %>
-    </div>
+<% @posts.each do |post| %>
+<%= link_to post_path(post.id),method: :get do %>
+  <div class='item-name-content'>
+    <%= @user.nickname %>
+  </end>
+  <div class='item-img-content'>
+    <%= image_tag post.image, class: "item-img" %>
+  </div>
   <% end %>
-  <% end %>
+  <div class='post-content'>
+    <%= post.content %>
+  </div>
+<% end %>
+<% end %>
 
+<%= link_to new_post_path(@post), class: 'purchase-btn' do %>
+  <span class='purchase-btn-text'>New Post</span>
+  <%# image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
