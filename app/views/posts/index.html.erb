@@ -4,9 +4,6 @@
 
 <% @posts.each do |post| %>
 <%= link_to post_path(post.id),method: :get do %>
-  <div class='item-name-content'>
-    <%= @user.nickname %>
-  </end>
   <div class='item-img-content'>
     <%= image_tag post.image, class: "item-img" %>
   </div>
