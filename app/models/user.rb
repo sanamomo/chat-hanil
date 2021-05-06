@@ -33,4 +33,5 @@ class User < ApplicationRecord
   has_many :posts
   has_many :room_users #, foreign_key: 'user_id'
   has_many :rooms, through: :room_users
+  has_many :messages
 end
