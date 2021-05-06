@@ -1,12 +1,12 @@
 class RoomsController < ApplicationController
+  # before_action :set_item
 
   def index
-    # @users = User.all
   end
 
   def new
     @room = Room.new
-    @room.users << current_user
+    # @room.room_users.build
   end
 
   def create
@@ -14,7 +14,6 @@ class RoomsController < ApplicationController
     @room.users = User.where(id: params[:user_ids])
     if @room.save
       render :index
-      # redirect_to root_path
     else
       render :new
     end
@@ -26,3 +25,8 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:name, user_ids: [])
   end
 end
+
+# @room.users = User.where(id: params[:user_ids])
+# def set_item
+  #   @room = Room.find(params[:id])
+  # end
