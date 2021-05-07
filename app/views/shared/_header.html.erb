@@ -4,6 +4,7 @@
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, user_path(id: current_user.id), class: "user-nickname" %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to 'Chat Room', rooms_path, class: "chatroom" %></li>
       <% else %>
         <li><%= link_to 'Sign In', new_user_session_path, class: "login" %></li>
         <li><%= link_to 'Sign Up', new_user_registration_path, class: "sign-up" %></li>
@@ -12,9 +13,9 @@
     <ul class = 'lists-right'>      
        <li>
           <% if I18n.locale.to_s == "ko" %>
-            <%= link_to('日本語', :locale => 'ja') %>
+            <%= link_to('日本語', :locale => 'ja'), class: "languages" %>
           <% else %>
-            <%= link_to('한국어', :locale => 'ko') %>
+            <%= link_to('한국어', :locale => 'ko'), class: "languages" %>
           <% end %>
        </li>
     </ul>

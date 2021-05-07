@@ -61,3 +61,5 @@ gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 
 gem 'i18n', '~> 1.8', '>= 1.8.10'
+
+gem 'pry-rails'
