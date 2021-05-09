@@ -3,10 +3,30 @@ ko:
     show:
       nickname: 사용자명
       email: Email
-      userposts: 
+      edit: 편집
+  shared:
+    header:
+      sign_out: 로그아웃
+      chat_room: 채팅방
   posts:
     index:
-    
+      new_post: 게시하기
+      post_content: 게시물을 올려서 일본 친구와 소통해보자!
     new:
       required: 필수
       image: 사진 선택
+  rooms:
+    new:
+      new_chat: 새로운 채팅방
+      chat_name: 채팅방 이름
+      chat_holder: 방 이름을 입력해주세요
+      chat_member: 채팅방 멤버 
+      chat_user: 멤버 선택
+      submit: 만들기
+  messages:
+    main_chat:
+      chat_exit: 채팅을 끝나기 
+      chat_image: 사진 
+      chat_submit: 보내기
+    side_bar:
+      new_room: 방 만들기 

@@ -31,16 +31,11 @@
         </tbody>
       </table>
 
-    <% if user_signed_in? %>
-        <%= link_to "Edit", edit_user_registration_path, method: :get, class: "item-red-btn" %>
-
+    <% if user_signed_in? && current_user.id == @user.id %>
+        <%= link_to :"#{ t('.edit') }", edit_user_registration_path, method: :get, class: "item-red-btn" %>
       <h2 class="page-heading">
         <%# ユーザーの投稿一覧 %>
       </h2>
-      <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%#= render partial: 'prototypes/prototype', collection: @prototypes %>
-      </div>
     <% end %>
     </div>
   </div>

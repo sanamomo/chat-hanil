@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ヘッダー */
+.top-page-header {
+  background-color: #F1DFD9;
+  margin-bottom: 48px;
+  padding: 20px 0;
+
+}
+
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav {
+  font-size: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+.logo {
+  width: 200px;
+}
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #DA7857;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #DA7857 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+/* .nav__right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+} */
+
+.nav__left {
+  display: flex;
+  min-width: 200px;
+
+}
+
+.nav__btn:hover{
+  color: #FFE5CC;
+  background: #DA7857;
+}
+
+.languages{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #DA7857;
+  text-decoration: none;
+  user-select: none;
+}
+
+.logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #DA7857;
+  text-decoration: none;
+  user-select: none;
+}
+.nav__logout:hover{
+  opacity: 0.5;
+}
+
