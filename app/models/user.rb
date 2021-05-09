@@ -11,7 +11,6 @@ class User < ApplicationRecord
   belongs_to_active_hash :language
 
   with_options presence: true do
-    # validates :image
     validates :nickname, format: { with: /\A[a-zA-Z가-힇ㄱ-ㅎㅏ-ㅣぁ-んァ-ヶ一-龥々ー]+\z/ }
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
     validates :last_name, format: { with: /\A[a-zA-Z가-힇ㄱ-ㅎㅏ-ㅣぁ-んァ-ヶ一-龥々ー]+\z/ }
@@ -20,9 +19,6 @@ class User < ApplicationRecord
     validates :first_name_eng, format: { with: /\A[a-zA-Z]+\z/ }
     validates :birthday
   end
-
-  # /[a-zA-Z가-힇ㄱ-ㅎㅏ-ㅣぁ-ゔァ-ヴー々〆〤一-龥]/
-
 
   with_options numericality: { other_than: 1 } do
     validates :sex_id
@@ -34,4 +30,10 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :messages
+  has_many :likes
+
+  def liked_by?(post_id)
+    likes.where(post_id: post_id).exists?
+  end
+
 end

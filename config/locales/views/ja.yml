@@ -3,8 +3,30 @@ ja:
     show:
       nickname: ユーザー名
       email: Email
+      edit: 編集
+  shared:
+    header:
+      sign_out: ログアウト
+      chat_room: チャットルーム
   posts:
     index:
+      new_post: 投稿する
+      post_content: 投稿をして韓国の友達と繋がろう！
     new:
       required: 必須
       image: 画像を選択する
+  rooms:
+    new:
+      new_chat: 新規チャットルーム
+      chat_name: チャットルーム名
+      chat_holder: ルーム名を入力してください
+      chat_member: チャットメンバー
+      chat_user: チャットするユーザーを選択する
+      submit: 作成
+  messages:
+    main_chat:
+      chat_exit: チャットを終了する
+      chat_image: 画像
+      chat_submit: 送信
+    side_bar:
+      new_room: ルーム作成

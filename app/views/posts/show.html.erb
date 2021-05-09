@@ -1,0 +1,14 @@
+<%= render "shared/secound_header"%>
+
+<% if user_signed_in? && current_user.id == @post.user_id %>
+<div class="prototype__manage">
+  <%= link_to "削除する", post_path(@post), method: :delete, class: :post__btn %>
+</div>
+<% end %>
+
+<div class="post__image">
+  <%= image_tag @post.image, class: "post-img" %>
+</div>
+<div class="post__body">
+  <%= @post.content %>
+</div>

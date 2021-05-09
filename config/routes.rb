@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   scope "(:locale)" do #, locale: /ja|ko/ 
     resources :users
-    resources :posts
+    resources :posts do
+      resources :likes, only: [:create, :destroy]
+    end
     resources :rooms do
       resources :messages, only: [:index, :create]
     end

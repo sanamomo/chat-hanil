@@ -2,19 +2,36 @@
 
 <% if @posts.present? %>
 
-<% @posts.each do |post| %>
-<%= link_to post_path(post.id),method: :get do %>
-  <div class='item-img-content'>
-    <%= image_tag post.image, class: "item-img" %>
-  </div>
+  <% @posts.each do |post| %>
+    <%= link_to "#{post.user.nickname}", user_path(post.user), class: :card__user %>
+    <%= link_to post_path(post.id),method: :get do %>
+      <div class='item-img-content'>
+        <%= image_tag post.image, class: "post-img" %>
+      </div>
+      <div class='post-content'>
+        <%= post.content %>
+      </div>
+    <% end %>
+      <div id="like-<%= post.id %>">
+        <%= render "likes/like", post: post %>
+      </div>
   <% end %>
-  <div class='post-content'>
-    <%= post.content %>
-  </div>
-<% end %>
+<% else %>
+  <%= link_to "#",method: :get do %>
+    <div class="post-info">
+      <div class='item-img-content'>
+        <%= image_tag "hanil_post.png", class: "post-img" %>
+      </div>
+      <div class='post-content'>
+        <%= t('.post_content') %>
+      </div>
+    </end>
+  <% end %>
 <% end %>
 
+
+
 <%= link_to new_post_path(@post), class: 'purchase-btn' do %>
-  <span class='purchase-btn-text'>New Post</span>
+  <span class='purchase-btn-text'><%= t('.new_post') %></span>
   <%# image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
