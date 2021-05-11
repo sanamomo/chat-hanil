@@ -16,14 +16,14 @@
 .side-bar-header {
   height: 100px;
   padding: 0 20px;
-  background-color: #253141;
+  background-color: #F1DFD9;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .rooms {
-  background-color: #2f3e51;
+  background-color: #F1DFD9;
   height: calc(100vh - 100px);
   padding: 0 20px;
   overflow: scroll;
@@ -53,15 +53,15 @@
 
 .header-name a {
   font-size: 16px;
-  color:#fafafa;
+  color:#DA7857;
   text-decoration: none;
 }
 
 .create-room a {
   padding: 14px;
-  border: 1px solid lightblue;
-  font-size: 10px;
-  color: deepskyblue;
+  border: 1px solid #DA7857;
+  font-size: 13px;
+  color: #DA7857;
   text-decoration: none;
 }
 
@@ -151,4 +151,21 @@
 
 .hidden {
   display: none;
+}
+
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #DA7857;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #DA7857 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.nav__btn:hover{
+  color: #FFE5CC;
+  background: #DA7857;
 }

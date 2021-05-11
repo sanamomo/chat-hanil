@@ -1,14 +1,42 @@
 <%= render "shared/secound_header"%>
 
-<% if user_signed_in? && current_user.id == @post.user_id %>
-<div class="prototype__manage">
-  <%= link_to "削除する", post_path(@post), method: :delete, class: :post__btn %>
-</div>
-<% end %>
+<%= link_to "#{@post.user.nickname}", user_path(@post.user), class: :post__user %>
 
 <div class="post__image">
   <%= image_tag @post.image, class: "post-img" %>
 </div>
 <div class="post__body">
   <%= @post.content %>
+</div>
+
+<div id="like-<%= @post.id %>">
+<span class="like"><%= t('.like') %>
+<%= render "likes/like", post: @post %>
+</div>
+
+<% if user_signed_in? && current_user.id == @post.user_id %>
+<div class="prototype__manage">
+  <%= link_to "削除する", post_path(@post), method: :delete, class: :post__btn %>
+</div>
+<% end %>
+
+
+<div class="comment-box">
+  <ul class="comments_lists">
+    <% @comments.each do |comment| %>
+    <li class="comments_list">
+      <%= comment.text %>
+      <%= comment.user.nickname %>
+    </li>
+    <% end %>
+  </ul>
+  <% if user_signed_in? %>
+    <%= form_with model: [@post, @comment], url: post_comments_path(post_id: @post.id), local: true do |f|%>
+    <%= f.text_area :text, class:"comment-text" %>
+
+    <button type="submit" class="comment-btn">
+      <span><%= t('.comment')%><span>
+    </button>
+    <% end %>
+  <% end %>
 </div>
