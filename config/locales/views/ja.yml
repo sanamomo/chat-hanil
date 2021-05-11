@@ -1,4 +1,8 @@
 ja:
+  devise:
+    sessions:
+      new:
+        new_user: サインイン
   users: 
     show:
       nickname: ユーザー名

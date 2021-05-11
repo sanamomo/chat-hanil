@@ -1,4 +1,8 @@
 ko:
+  devise:
+    sessions:
+      new:
+        new_user: 로그인
   users: 
     show:
       nickname: 사용자명

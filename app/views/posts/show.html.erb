@@ -12,3 +12,7 @@
 <div class="post__body">
   <%= @post.content %>
 </div>
+
+<div id="like-<%= @post.id %>">
+<%= render "likes/like", post: @post %>
+</div>

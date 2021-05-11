@@ -3,11 +3,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  color:#DA7857;
 }
 
 h2 {
   margin-bottom: 10px;
-  color: #f05050;
+  color: #DA7857;
   font-size: 14px;
 }
 
@@ -54,11 +55,22 @@ li {
 }
 .chat-room-form__action-btn {
   display: inline-block;
-  padding: 12px 20px;
-  color: #fff;
-  background-color: #38aef0;
-  border: 0;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #DA7857;
+  background-color: #F1DFD9;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #DA7857 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
 }
+
+.chat-room-form__action-btn:hover{
+  color: #FFE5CC;
+  background: #DA7857;
+}
+
 .chat-room-form__field {
   margin-top: 30px;
 }
@@ -101,7 +113,7 @@ li {
   cursor: pointer;
 }
 .chat-room-user__btn--add {
-  color: #38aef0;
+  color: #DA7857;
 }
 .chat-room-user__btn--remove {
   color: #f05050;
@@ -118,7 +130,7 @@ select {
 }
 
 .top-header {
-  background-color: #434a54;
+  background-color: #D47B5D;
   height: 80px;
   width: 100%;
 }

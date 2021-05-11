@@ -1,6 +1,13 @@
 <div class='wrapper'>
   <div class='side-bar'>
+    <%# render "shared/secound_header"%>
     <%= render "messages/side_bar" %>
-    <%= render "shared/secound_header"%>
+  </div>
+  <div class="nav__">
+    <% if I18n.locale.to_s == "ko" %>
+      <%= link_to('日本語', { :locale => 'ja' }, { class: "languages" }) %>
+    <% else %>
+      <%= link_to('한국어', { :locale => 'ko' }, { class: "languages" }) %>
+    <% end %>
   </div>
 </div>
