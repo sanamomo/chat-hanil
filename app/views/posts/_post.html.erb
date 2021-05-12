@@ -1,8 +1,8 @@
 <div class="card">
-  <%= link_to image_tag(post.image, class: :post__img ), post_path(post.id),method: :get do %>
-  <div class="card__body">
-    <p class="card__summary">
-      <%= prototype.content %>
-    </p>
-  </div>
+  <%= link_to post_path(post.id),method: :get do %>
+    <%= image_tag(post.image) %>
+    <div class="card__body">
+      <%= post.content %>    
+    </div>
+  <% end %>
 </div>
