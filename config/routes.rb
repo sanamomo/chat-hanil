@@ -14,6 +14,3 @@ Rails.application.routes.draw do
     end
   end
 end
-
-# resources :like
-# resources :comments, only: :create

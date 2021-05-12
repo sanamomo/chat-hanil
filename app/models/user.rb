@@ -37,4 +37,7 @@ class User < ApplicationRecord
     likes.where(post_id: post_id).exists?
   end
 
+  def posts
+    return Post.where(user_id: self.id)
+  end
 end

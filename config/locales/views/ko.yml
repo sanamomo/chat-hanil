@@ -20,7 +20,6 @@ ko:
       required: 필수
       image: 사진 선택
     show:
-      like: 좋아요
       comment: 댓글
   rooms:
     new:

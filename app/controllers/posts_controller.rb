@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:show]
+  before_action :ensure_correct_user, only: [:edit]
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -38,6 +39,13 @@ class PostsController < ApplicationController
 
   def set_item
     @post = Post.find(params[:id])
+  end
+
+  def ensure_correct_user
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+       redirect_to("/posts/index")
+    end
   end
 
 end
