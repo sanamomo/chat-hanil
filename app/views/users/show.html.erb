@@ -34,7 +34,9 @@
     <% if user_signed_in? && current_user.id == @user.id %>
         <%= link_to :"#{ t('.edit') }", edit_user_registration_path, method: :get, class: "item-red-btn" %>
     <% end %>
-    <%= render partial: 'posts/post', collection: @posts %>
+      <div class = "card__wrapper">
+        <%= render partial: 'posts/post', collection: @posts %>
+      </div>
     </div>
   </div>
 </div>
