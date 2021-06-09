@@ -19,8 +19,11 @@ ko:
     new:
       required: 필수
       image: 사진 선택
+      send: 게시하기
+      text: 입력하기
     show:
       comment: 댓글
+      delete: 삭제
   rooms:
     new:
       new_chat: 새로운 채팅방

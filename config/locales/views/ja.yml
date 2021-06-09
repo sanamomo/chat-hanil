@@ -19,8 +19,11 @@ ja:
     new:
       required: 必須
       image: 画像を選択する
+      send: 投稿する
+      text: 入力する
     show:
       comment: コメント
+      delete: 削除する
   rooms:
     new:
       new_chat: 新規チャットルーム

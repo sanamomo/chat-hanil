@@ -4,19 +4,19 @@
 
 <%# render 'shared/error_messages', model: f.object %>
 
-<div class="contents row">
+<div class="contentsrow">
   <div class="click-upload">
-    <p>
-      <%= t('posts.new.image') %>
-    </p>
-    <%= f.file_field :image, id:"item-image" %>
+    <%= f.label :image, "#{ t('.image')}", class:"image_btn" %>
+      <%= f.file_field :image, id:"image" %>
   </div>
   <div class="content_text">
-    <%= f.text_area :content, placeholder: "text", rows: "3" %>
+    <%= f.text_area :content, placeholder: "#{ t('.text')}", rows: "3", class:"text_area" %>
   </div>
-  <div class="btn-contents">
-    <%= f.submit "SEND" %>
-    <%=link_to "#{ t('devise.shared.links.back')}", root_path, class:"back-btn" %>
+  <div class="new-post-btn">
+    <%= f.submit "#{ t('.send')}", class:"new-post-btn-text" %>
   </div>
+  <%=link_to "#{ t('devise.shared.links.back')}", root_path, class:"back-btn" %>
 </div>
 <% end %>
+
+<%# f.label :image, "#{ t('.image')}", class:"image" %>

@@ -34,7 +34,7 @@
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  
 }
 
 .messages {
@@ -45,10 +45,18 @@
 }
 
 .form {
-  background-color:#dddddd;
-  height: 90px;
-  padding: 20px 40px;
-  display: flex;
+  width: 90%;
+  padding: 20px 40px; 
+  display: inline-block;
+}
+
+.form-text {
+  color: #DA7857;
+  display: inline-block;
+}
+
+.input-birth-wrap {
+  color: #DA7857;
 }
 
 .header-name a {
@@ -56,6 +64,20 @@
   color:#DA7857;
   text-decoration: none;
 }
+
+.indispensable {
+  background: #DA7857;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+
+}
+
+
 
 .create-room a {
   padding: 14px;

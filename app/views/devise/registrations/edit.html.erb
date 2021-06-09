@@ -61,9 +61,9 @@
           </div>
           <%= f.password_field :current_password, autocomplete: "current-password",class: "input-default" %>
         </div>
-
-        <%= f.submit :"#{ t('helpers.submit.update') }", class: "btn btn-primary form-submit-btn" %>
-        <%# link_to  "マイページへ", users_path, class: "link-below-user-form" %>
+        <div class="new-post-btn">
+          <%= f.submit :"#{ t('helpers.submit.update') }", class:"new-post-btn-text" %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <%if user_signed_in? %>
   <% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
     <%= link_to post_like_path(id: post.id, post_id: post.id), method: :DELETE, remote: true, class: "likes-count" do %>
-      <i class="fas fa-heart"></i>
+      <i class="fas fa-heart size"></i>
     <% end %>
     <%= post.likes.count %>
   <% else %>

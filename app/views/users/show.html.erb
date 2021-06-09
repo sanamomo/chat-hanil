@@ -3,7 +3,7 @@
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
-      <h2 class="page-heading">
+      <h2 class="user__name">
         <%= @user.nickname %>
       </h2>
       <table class="table">
@@ -32,11 +32,11 @@
       </table>
 
     <% if user_signed_in? && current_user.id == @user.id %>
-        <%= link_to :"#{ t('.edit') }", edit_user_registration_path, method: :get, class: "item-red-btn" %>
+        <%= link_to :"#{ t('.edit') }", edit_user_registration_path, method: :get, class: "edit-btn" %>
     <% end %>
-      <div class = "card__wrapper">
-        <%= render partial: 'posts/post', collection: @posts %>
-      </div>
+    </div>
+    <div class = "card__wrapper">
+      <%= render partial: 'posts/post', collection: @posts %>
     </div>
   </div>
 </div>
