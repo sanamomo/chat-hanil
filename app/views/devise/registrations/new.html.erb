@@ -10,16 +10,16 @@
 
   <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('activerecord.models.user') %>
       </label>
-      <span class="indispensable"> <%= t('devise.new.required') %> </span>
+      <span class="indispensable"><%= t('devise.new.required') %></span>
     </div>
     <%= f.text_area :nickname, class:"input-default", id:"nickname", maxlength:"40" %>
   </div>
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('attributes.user.email')%>
@@ -28,7 +28,7 @@
     </div>
     <%= f.email_field :email, class:"input-default", id:"email", autofocus: true %>
   </div>
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('activerecord.attributes.user.password')%>
@@ -37,7 +37,7 @@
     </div>
     <%= f.password_field :password, class:"input-default", id:"password" %>
   </div>
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('activerecord.attributes.user.password_confirmation') %>
@@ -47,7 +47,7 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation" %>
   </div>
 
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('devise.new.last_first_name') %>
@@ -59,7 +59,7 @@
       <%= f.text_area :first_name, class:"input-name", id:"first-name" %>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('devise.new.name_eng') %>
@@ -72,7 +72,7 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('devise.new.self_introduction') %>
@@ -84,7 +84,7 @@
 
   <div class="user-selects">
     <div class="form">
-      <div class="bold-text">
+      <div class="form-text">
       <%= t('devise.new.sex_id') %>
         <span class="indispensable"> <%= t('devise.new.required') %> </span>
       </div>
@@ -92,7 +92,7 @@
     </div>
 
     <div class="form">
-      <div class="bold-text">
+      <div class="form-text">
       <%= t('devise.new.area_id') %>
         <span class="indispensable"> <%= t('devise.new.required') %> </span>
       </div>
@@ -100,7 +100,7 @@
     </div>
   
     <div class="form">
-      <div class="bold-text">
+      <div class="form-text">
       <%= t('devise.new.language') %>
         <span class="indispensable"> <%= t('devise.new.required') %> </span>
       </div>
@@ -108,7 +108,7 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form">
     <div class='form-text-wrap'>
       <label class="form-text">
       <%= t('devise.new.birthdays') %>
@@ -130,9 +130,7 @@
     </div>
   </div>
   <div class='register-btn'>
-    <%= f.submit :"#{ t'helpers.submit.create' }" %>
+    <%= f.submit :"#{ t'helpers.submit.create' }", class: "register_btn" %>
   </div>
 </div>
 <% end %>
-
-<%# , class:"register-red-btn"%>

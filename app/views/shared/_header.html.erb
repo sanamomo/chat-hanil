@@ -4,14 +4,14 @@
       <div class="nav__left">
         <% if user_signed_in? %>
           <%= link_to current_user.nickname, user_path(id: current_user.id), class: "user-nickname", class: :nav__btn %>
-          <%= link_to "#{ t('.chat_room') }", rooms_path, class: :nav__btn %>
+          <%# link_to "#{ t('.chat_room') }", rooms_path, class: :nav__btn %>
           <%= link_to "#{ t('.sign_out')}", destroy_user_session_path, method: :delete, class: "logout" %>
         <% else %>
           <%= link_to "#{ t('devise.shared.links.sign_in')}", new_user_session_path, class: :nav__btn %>
           <%= link_to "#{ t('devise.shared.links.sign_up')}", new_user_registration_path, class: :nav__btn %>
         <% end %>
       </end>
-     
+    </div>
       <div class="nav__right">
         <% if I18n.locale.to_s == "ko" %>
           <%= link_to('日本語', { :locale => 'ja' }, { class: "languages" }) %>
@@ -19,6 +19,5 @@
           <%= link_to('한국어', { :locale => 'ko' }, { class: "languages" }) %>
         <% end %>
       </div>
-    </div>
   </div>
 </header>

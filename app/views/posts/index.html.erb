@@ -1,26 +1,28 @@
 <%= render "shared/header"%>
 
+<div class = "card__wrapper">
 <% if @posts.present? %>
-
-  <% @posts.each do |post| %>
-    <%= link_to "#{post.user.nickname}", user_path(post.user), class: :card__user %>
-    <%= link_to post_path(post.id),method: :get do %>
-      <div class='item-img-content'>
-        <%= image_tag post.image, class: "post-img" %>
-      </div>
-      <div class='post-content'>
-        <%= post.content %>
+    <% @posts.each do |post| %>
+      <div class="card">
+      <%= link_to "#{post.user.nickname}", user_path(post.user), class: :user__name %>
+      <%= link_to post_path(post.id),method: :get do %>
+        <div class='item-img-content'>
+          <%= image_tag post.image, class: "card__img" %>
+        </div>
+        <div class='card__content'>
+          <%= post.content %>
+        </div>
+      <% end %>
+        <div id="like-<%= post.id %>">
+          <%= render "likes/like", post: post %>
+        </div>
       </div>
     <% end %>
-      <div id="like-<%= post.id %>">
-        <%= render "likes/like", post: post %>
-      </div>
-  <% end %>
 <% else %>
   <%= link_to "#",method: :get do %>
     <div class="post-info">
       <div class='item-img-content'>
-        <%= image_tag "hanil_post.png", class: "post-img" %>
+        <%= image_tag "hanil_post.png", class: "card__img" %>
       </div>
       <div class='post-content'>
         <%= t('.post_content') %>
@@ -28,9 +30,10 @@
     </end>
   <% end %>
 <% end %>
+</div>
 
 
 
-<%= link_to new_post_path(@post), class: 'purchase-btn' do %>
-  <span class='purchase-btn-text'><%= t('.new_post') %></span>
+<%= link_to new_post_path(@post), class: 'post-btn' do %>
+  <span class='post-btn-text'><%= t('.new_post') %></span>
 <% end %>
